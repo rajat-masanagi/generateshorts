@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .inp{
+            padding:15px;
+            width:20vw;
+        }
+        .sbm{
+            padding:15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter a prompt on which the story should be generated</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type='text' placeholder='generate an AITA reddit story' class='inp' name="user_input">
+        <button type="submit" class='sbm'>Submit</button>
+    </form>
+    <h3>{{ response }}</h3>
+</body>
+</html>
